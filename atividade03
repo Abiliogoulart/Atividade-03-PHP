@@ -1,0 +1,72 @@
+<?php
+
+class Pessoa {
+    protected string $nome;
+    protected int $idade = 0; // Valor inicial para evitar o erro
+    protected string $sexo;
+
+    public function fazerAniversario(): void {
+        $this->idade++;
+        echo "{$this->nome} fez aniversário! Idade agora: {$this->idade}<br>\n";
+    }
+
+    public function setNome(string $nome): void {
+        $this->nome = $nome;
+    }
+}
+
+class Aluno extends Pessoa {
+    private int $matricula;
+    private string $curso;
+
+    public function cancelarMatr(): void {
+        echo "Matrícula do aluno {$this->nome} foi cancelada.<br>\n";
+    }
+}
+
+class Professor extends Pessoa {
+    private string $especialidade;
+    private float $salario;
+
+    public function receberAum(float $valor): void {
+        $this->salario += $valor;
+        echo "Professor {$this->nome} recebeu aumento. Novo salário: R$ {$this->salario}<br>\n";
+    }
+}
+
+class Funcionario extends Pessoa {
+    private string $setor;
+    private bool $trabalhando;
+
+    public function mudarTrabalho(string $novoSetor): void {
+        $this->setor = $novoSetor;
+        echo "Funcionário {$this->nome} mudou para o setor: {$this->setor}<br>\n";
+    }
+}
+
+class Bolsista extends Aluno {
+    private float $bolsa;
+
+    public function renovarBolsa(): void {
+        echo "A bolsa do aluno bolsista {$this->nome} foi renovada.<br>\n";
+    }
+}
+
+class Tecnico extends Aluno {
+    private string $registroProfissional;
+
+    public function praticar(): void {
+        echo "O aluno técnico {$this->nome} está a praticar.<br>\n";
+    }
+}
+
+$p1 = new Professor();
+$p1->setNome("Carlos");
+$p1->fazerAniversario();
+
+$b1 = new Bolsista();
+$b1->setNome("Ana");
+$b1->renovarBolsa();
+$b1->cancelarMatr();
+
+?>
