@@ -1,0 +1,24 @@
+                 ┌─────────────────────────┐
+                 │         Entrega         │
+                 ├─────────────────────────┤
+                 │ Atributos:               │
+                 │ - codigo                 │
+                 │ - destino                │
+                 │ - distancia              │
+                 ├─────────────────────────┤
+                 │ Método:                  │
+                 │ + exibirDados()          │
+                 └────────────┬────────────┘
+                              │
+                 ┌────────────┴────────────┐
+                 │                         │
+        ┌────────▼─────────┐     ┌─────────▼────────┐
+        │   EntregaMoto    │     │   EntregaDrone  │
+        ├──────────────────┤     ├──────────────────┤
+        │ Atributos próprios:│    │ Atributos próprios:│
+        │ - placa          │     │ - modeloDrone     │
+        │ - nomeEntregador │     │ - autonomiaKm     │
+        ├──────────────────┤     ├──────────────────┤
+        │ Método próprio:  │     │ Método próprio:   │
+        │ + realizarEntrega()│   │ + realizarEntrega()│
+        └──────────────────┘     └──────────────────┘
